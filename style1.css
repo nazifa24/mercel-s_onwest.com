@@ -1,99 +1,103 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset some basic styles for consistency across browsers */
+body, h1, h2, ul, li, nav {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
-    padding: 2rem;
-    text-align: center;
-}
-
-#home {
-    background: url('cover.jpeg') no-repeat center center/cover;
-    color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#menu, #about, #contact {
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     background-color: #f4f4f4;
-    margin: 2rem 0;
-    padding: 2rem;
-}
-
-h2 {
-    margin-bottom: 1rem;
-}
-
-.menu-item {
-    background: white;
-    padding: 1rem;
-    margin: 1rem 0;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-    text-align: left;
-}
-
-.menu-item h4 {
-    margin: 0.5rem 0;
-}
-
-form {
+    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-form label {
-    margin-top: 1rem;
-}
-
-form input, form textarea {
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    font-size: 1rem;
+/* Navigation bar styling */
+nav {
     width: 100%;
-    max-width: 500px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
-button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
+nav ul {
+    list-style: none;
+    display: flex;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav .logo {
+    max-height: 50px;
+}
+
+/* Menu section styling */
+.menu {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px 0;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu h1 {
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.menu h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+/* Back button styling */
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
 }
