@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercel's</title>
+    <title>Marcel's</title>
     <link rel="stylesheet" href="style1.css">
-    
 </head>
+
 <body>
     <header>
         <nav>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
@@ -18,8 +24,29 @@
             </ul>
         </nav>
     </header>
-    <section id="home">
-       
+
+    <section id="menu-section">
+        <h1>Our Menu</h1>
+        <div class="menu-grid">
+            <a href="brunch.html" class="menu-item">
+                <img src="brunch.jpg" alt="Brunch Menu">
+                <h2>Brunch</h2>
+            </a>
+            <a href="dinner.html" class="menu-item">
+                <img src="dinner.jpg" alt="Dinner Menu">
+                <h2>Dinner</h2>
+            </a>
+        </div>
     </section>
+
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('nav ul');
+
+        hamburgerMenu.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    </script>
 </body>
+
 </html>
