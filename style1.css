@@ -1,99 +1,95 @@
-/* Reset some basic styles for consistency across browsers */
-body, h1, h2, ul, li, nav {
+/* General body styling */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.6;
+    background-color: #0a0a0a;
+    color: #f8f0f0;
+    text-shadow:
+    1px 1px 1px rgb(41, 35, 35),
+    2px 2px 1px rgb(50, 131, 84);
 }
 
-/* General body styling */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Header styling */
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: rgb(26, 25, 25);
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure header stays on top of other elements */
 }
 
 /* Navigation bar styling */
-nav {
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
 nav ul {
     list-style: none;
+    padding: 0;
     display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 1rem;
 }
 
 nav ul li a {
-    color: #fff;
+    color: rgb(241, 229, 229);
     text-decoration: none;
-    font-size: 16px;
 }
 
-nav .logo {
-    max-height: 50px;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Menu section styling */
-.menu {
-    width: 80%;
-    max-width: 800px;
-    margin: 20px 0;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.menu h1 {
+#menu-section {
+    padding-top: 100px; /* Adjust for the fixed header */
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2em;
+    color: white;
+    background: url('background.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.menu h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 1.5em;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
+/* Grid layout for menu items */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 2rem auto;
 }
 
-.menu ul {
-    list-style: none;
+.menu-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.menu ul li {
-    margin: 10px 0;
-    font-size: 1.1em;
+.menu-item:hover {
+    transform: scale(1.05);
 }
 
-/* Back button styling */
-.back-button {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }
 
-.back-button:hover {
-    background-color: #555;
+.menu-item h2 {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    color: #f8f0f0;
 }
 
 /* Ensure all images are responsive */
@@ -101,3 +97,47 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+/* Heading styles */
+h1 {
+    font-size: 4rem; /* Larger font size for the main heading */
+    margin-bottom: 2rem;
+}
+/* Hamburger menu styles */
+.hamburger-menu {
+    display: none; /* Hide on larger screens initially */
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+/* Show the hamburger menu on smaller screens */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    nav ul {
+        display: none; /* Hide the navigation menu by default */
+    }
+
+    nav.show ul {
+        display: block; /* Show the navigation menu when clicked */
+        position: absolute;
+        top: 50px; /* Adjust position as needed */
+        left: 0;
+        background-color: #f2f2f2;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
