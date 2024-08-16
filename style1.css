@@ -2,23 +2,31 @@
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
-    padding: 0;
+    padding: 1;
     box-sizing: border-box;
+
     line-height: 1.6;
     background-color: #0a0a0a;
+    
     color: #f8f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-shadow:
     1px 1px 1px rgb(41, 35, 35),
-    2px 2px 1px rgb(50, 131, 84);
+    2px 2px 1px rgb(50, 131, 84)
 }
 
 /* Header styling */
 header {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent background */
     color: rgb(26, 25, 25);
     padding: 1rem 0;
     text-align: center;
-    position: fixed;
+    text-shadow:
+    1px 1px 1px rgb(45, 48, 46),
+    2px 2px 1px rgb(196, 194, 194)
+    position: absolute;
     width: 100%;
     top: 0;
     z-index: 1000; /* Ensure header stays on top of other elements */
@@ -33,6 +41,7 @@ nav ul {
 }
 
 nav ul li {
+    display: inline;
     margin: 0 1rem;
 }
 
@@ -40,69 +49,214 @@ nav ul li a {
     color: rgb(241, 229, 229);
     text-decoration: none;
 }
+nav .logo {
+    max-height: 50px;
+}
+
 
 nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Menu section styling */
-#menu-section {
-    padding-top: 100px; /* Adjust for the fixed header */
-    text-align: center;
+
+/* Specific section background colors */
+#menu {
+    background-color: #FFB6C1; /* Light pink */
+}
+
+#brunch {
+    background-color: #FFD700; /* Gold */
+}
+
+#dinner {
+    background-color: #ADD8E6; /* Light blue */
+}
+
+#about {
+    background-color: #06090a; /* Light green */
+}
+
+#contact {
+    background-color: #08070a; /* Tomato */
+}
+
+/* Heading styles */
+h2 {
+    margin-bottom: 1rem;
+}
+/* Home section styling */
+#home {
+    background: url('cover.jpeg') no-repeat center center/cover;
     color: white;
-    background: url('background.jpg') no-repeat center center/cover;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+}
+ 
+/* Menu item styling */
+.menu-item {
+    background: white;
+    padding: 2rem;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    text-align: left;
+
+}
+
+.menu-item h4 {
+    margin: 0.5rem 0;
+}
+.menu-items li {
+    font-size: 1.2rem;
+    padding: 2rem 1; /* Increase padding for more space between items */
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-/* Grid layout for menu items */
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    width: 80%;
-    max-width: 1200px;
-    margin: 2rem auto;
+form label {
+    margin-top: 1rem;
 }
 
-.menu-item {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 1rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.menu-item:hover {
-    transform: scale(1.05);
-}
-
-.menu-item img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.menu-item h2 {
+form input, form textarea {
     margin-top: 0.5rem;
-    font-size: 2rem;
-    color: #f8f0f0;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
 }
 
+/* Button styling */
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #e7e5f7;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Additional styling for the menu pages */
 /* Ensure all images are responsive */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Heading styles */
-h1 {
-    font-size: 4rem; /* Larger font size for the main heading */
+/* Back button styling */
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #e5e1f0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+/* Menu page background */
+#menu-section {
+    background: url('covermenu.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 2rem;
+    min-height: 100vh;
+    width: 100%
+}
+/* Larger font sizes for headings and text on the menu page */
+#menu-section h1 {
+    font-size: 4rem; /* Increase size of main heading */
     margin-bottom: 2rem;
 }
+
+#menu-section ul {
+    font-size: 2rem; /* Increase size of list items */
+}
+
+#menu-section ul li {
+    margin: 2rem 0;  /* Add more space between list items */
+}
+
+
+/* Brunch page background */
+#brunch-section {
+    position: relative;
+    background: url('food.jpg') no-repeat center center/cover;
+    
+    color: white;
+    padding: 2rem;
+    min-height: 100vh;
+}
+#brunch-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0;
+}
+
+#brunch-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Dinner page background */
+#dinner-section {
+    position: relative;
+    background: url('food.jpg') no-repeat center center/cover;
+    
+    color: white;
+    padding: 2rem;
+    min-height: 100vh;
+}
+#dinner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0;
+}
+
+#dinner-section > * {
+    position: relative;
+    z-index: 1;
+}
+/* General styles for menu items */
+ul.menu-items {
+    list-style: none;
+    padding: 0;
+}
+
+ul.menu-items li {
+    margin: 1.5rem 0;  /* Add more space between menu items */
+}
+
 /* Hamburger menu styles */
 .hamburger-menu {
     display: none; /* Hide on larger screens initially */
